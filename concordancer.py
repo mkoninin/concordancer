@@ -19,21 +19,12 @@ class concordancer:
 
 # %%
 
-text = 'Мама мыла раму. Рама мыла маму.'
+text = 'Носила свитер недолго, но уже появились катышки, затяжки, быстро растянулся. . На свитере никакой информации о производителе, о том, как ухаживать за ним. Ну и качество, конечно, оставляет желать лучшего. За эти деньги точно что-то ещё получше можно найти. В общем, жаль потраченных денег. А продавцу следует лучше выбирать то, что он продаёт. Хотя, наверное, ему плевать. Скорее всего, покупает на Садоводе и перепродает. А там, мне прекрасно известно, какое г..но может продаваться'
 
 
 # %%
 from razdel import sentenize
 from razdel import tokenize
-
-# %%
-sentences = list(sentenize(text))
-
-for sentence in sentences:
-    print(list(tokenize(sentence.text)))
-# %%
-sentence.text
-# %%
 
 from natasha import (
     Segmenter,
@@ -63,10 +54,10 @@ doc.tag_morph(morph_tagger)
 doc.parse_syntax(syntax_parser)
 for token in doc.tokens:
     token.lemmatize(morph_vocab)
-print(doc.tokens)
+print(doc.token)
 # %%
 
 for token in doc.tokens:
-    if token.lemma == 'мыть':
-        print(token) 
+    # if token.lemma == 'мыть':
+    print(token) 
 # %%
